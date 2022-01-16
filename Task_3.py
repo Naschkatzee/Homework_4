@@ -1,0 +1,12 @@
+def inspect (func):
+    def wrapper (*args, **kwargs):
+        res = func (*args, **kwargs)
+        return res
+    return wrapper
+
+# функция, которая подлежит оборачиванию
+@inspect
+def concat (n):
+    l = [x for x in range(n) if x % 2 == 0]
+    return l
+print (concat(10))
