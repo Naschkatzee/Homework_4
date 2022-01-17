@@ -1,4 +1,4 @@
-def inspect (func):
+def inspect (func: int) ->: None:
     def wrapper (*args, **kwargs):
         res = func (*args, **kwargs)
         return res
