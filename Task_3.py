@@ -1,12 +1,12 @@
-def inspect (func: int) -> None:
-    def wrapper (*args, **kwargs):
-        res = func (*args, **kwargs)
-        return res
-    return wrapper
+characters = ['hello', 'filthy', 'dogs']
 
-# функция, которая подлежит оборачиванию
+def inspect (con: str) -> None:
+    def the_wrapper_around_the_original_function():
+        print (characters)
+    con ()
+    return the_wrapper_around_the_original_function
+
 @inspect
-def concat (n):
-    l = [x for x in range(n) if x % 2 == 0]
-    return l
-print (concat(10))
+def con():
+    word = ' '.join(characters)
+    print (word) 
